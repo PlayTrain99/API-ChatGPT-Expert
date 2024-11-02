@@ -27,4 +27,5 @@ jobs:
       - name: Deploy
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python app.py  # Uruchomienie Twojej aplikacji
+        run: |
+          gunicorn --bind 0.0.0.0:8000 app:app
