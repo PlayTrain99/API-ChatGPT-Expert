@@ -1,0 +1,85 @@
+
+body,html{
+  height: 100%;
+  margin: 0;
+  background: #7F7FD5;
+     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+      background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+
+h1{
+  font-family: 'Copperplate Gothic Light';
+  color: rgb(75, 62, 62);
+}
+  
+.chat-box {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  padding-bottom: 70px; /* Zostaw miejsce na formularz na dole */
+  border-radius: 10px;
+  height: 500px;
+  overflow-y: auto; /* Zapewnia przewijanie wewnątrz chat-box */
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+}
+
+.message-input-text {
+  width: 100%; /* Rozciąga element na całą dostępną szerokość */
+  position: sticky;
+  bottom: 0; /* Określa, że element ma się przykleić na dole podczas przewijania */
+  background: rgba(0, 0, 0, 0.6); /* Tło dla lepszej widoczności */
+  padding: 10px; /* Padding wewnętrzny dla formularza */
+  border-radius: 10px;
+  z-index: 10; /* Zapewnia, że element będzie nad innymi elementami */
+  display: flex;
+}
+
+#message-input{
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color:white;
+}
+
+#send-btn {
+  border-radius: 0 15px 15px 0;
+	background-color: rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+	color: white;
+	cursor: pointer;
+  padding: 15px;
+}
+
+.user-message {
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: #78e08f;
+  padding: 10px;
+  position: relative;
+  font-family: 'Times New Roman';
+}
+
+.bot-message {
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: #82ccdd;
+  padding: 10px;
+  position: relative;
+  font-family: 'Times New Roman';
+}
+
+.bot-icon, .user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+  
