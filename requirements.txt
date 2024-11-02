@@ -17,3 +17,4 @@ python-dotenv==1.0.1
 requests==2.31.0
 SQLAlchemy==2.0.29
 spacy==3.7.4
+gunicorn==20.1.0
