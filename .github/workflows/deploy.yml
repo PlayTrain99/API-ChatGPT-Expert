@@ -3,7 +3,7 @@ name: CI/CD Workflow
 on:
   push:
     branches:
-      - main
+      - master  # Użyj gałęzi 'main', jeśli to jest główna gałąź repozytorium
 
 jobs:
   build:
@@ -22,13 +22,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          python -m spacy download pl_core_news_sm  # Instalacja modelu spaCy
 
       - name: Deploy
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "Deploying with secret key..."
-          echo "My secret key is $OPENAI_API_KEY"
-          # Tutaj dodaj polecenie do wdrożenia aplikacji, np. uruchomienie serwera
-          # Przykład:
-          # python app.py
+          echo "My secret key is $OPENAI_API_KEY"  # Upewnij się, że nie logujesz rzeczywistych sekretów w produkcji
+          python app.py  # Uruchomienie Twojej aplikacji
