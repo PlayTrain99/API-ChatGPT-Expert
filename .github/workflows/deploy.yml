@@ -27,7 +27,4 @@ jobs:
       - name: Deploy
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          echo "Deploying with secret key..."
-          echo "My secret key is $OPENAI_API_KEY"  # Upewnij się, że nie logujesz rzeczywistych sekretów w produkcji
-          python app.py  # Uruchomienie Twojej aplikacji
+        run: python app.py  # Uruchomienie Twojej aplikacji
