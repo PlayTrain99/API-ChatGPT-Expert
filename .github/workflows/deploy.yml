@@ -1,0 +1,33 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Deploy
+        env:
+          SECRET_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "Deploying with secret key..."
+          echo "My secret key is $SECRET_KEY"
+          # Tutaj możesz dodać polecenie do wdrożenia, które używa zmiennej $SECRET_KEY
